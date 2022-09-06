@@ -1,2 +1,3 @@
-Hello
 This is GIT session from Edureka on YouTube
+
+Added new line for rebasing

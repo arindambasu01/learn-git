@@ -1,0 +1,175 @@
+git config --global user.name "Arindam Basu"
+git config --global user.email arindam4all@gmail.com
+git config --global core.editor "code --wait"
+git config --global -e
+git config --global core.autocrlf = true
+
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+
+#Creating Snapshots
+#D:\Users\BASUA06\Documents\Projects
+git init
+
+#Status 
+git status
+git status -s
+
+# Add to tracking / statging
+git add file1.txt file2.txt
+git add *.txt
+git add .
+
+# Commit
+git commit -m "Inital Commit."
+git commit
+
+# Commit without staging
+git commit -am "Fixed the bug that prevented the users from sighing up"
+
+# Removing and renaming Files in repository
+git rm file1.txt
+git mv file1.txt main.js
+
+# gitignore
+
+# List files in reporsitory
+git ls-files
+
+# Differnce in file content ready for commit
+git diff --staged
+	# Differing between work dir and staged
+	git difftool
+	
+	# Differing between staged and commited
+	git difftool --staged
+
+
+# Commit hisotry
+git log
+git log --oneline
+git log --oneline --reverse
+
+git show 
+git show HEAD 
+git show HEAD~1
+#show final version of file stored in commit
+git show HEAD~1:.gitignore
+
+#show all files present in commit
+git ls-tree HEAD~1
+#content of files in git databse in a commit
+# get ID from git ls-tree HEAD~1 
+git show <id>
+
+#Restore
+git restore file1.js
+git restore --staged file1.js
+
+# Clean from local work directory
+git clean -fd
+
+
+######################
+Sync Local Repo to Remote Repo
+######################
+https://github.com/arindambasu01/learn-git.git
+
+#Link local repo to remote:
+git remote add origin https://github.com/arindambasu01/learn-git.git
+
+#View linked remote repositories
+git remote -v
+
+# Sync from local to remote
+git push origin master
+
+# Branching
+
+# Crearte New branch
+git branch edurekabranch
+
+#View branches in repository
+git branch
+
+# Change Branch
+git checkout edurekabranch
+
+# Create new branch and checkout
+git checkout -b newedurekabranch
+
+# rebase
+git rebase master
+
+# archive
+git archive master --formatzip --output 
+
+#bundle
+
+#stash
+
+# Pull
+
+#rename the alias:
+git remote rename origin repo1
+
+# Delete branch remote
+git push origin --delete edurekabranch
+
+# Delete branch local
+git branch -d edurekabranch
+
+#Rename branch
+#local
+git branch -m oldbranch newbranch
+
+#remote
+git push origin :oldbranch newbranch
+
+#  Difference in Files
+# Local and staging
+git diff edureka.txt
+
+# Staging and commit
+git diff --staging edureka.txt
+
+# Files between two commits
+git diff 11cd517aabaeae5c1bf3ca959b21a45210954f8b de9c3a92c10dd2ee5060dd1b4f21e269e6365c3e
+
+# Specific file between two commit
+git diff 11cd517aabaeae5c1bf3ca959b21a45210954f8b de9c3a92c10dd2ee5060dd1b4f21e269e6365c3e edureka.txt
+
+# Compare local Git brach with remote
+# fetch remote repositories
+git fetch origin
+
+#View all branch path including remote  
+git branch -a
+
+# difference
+git diff master remotes/origin/master edureka2.txt
+
+# Fork
+Fork sample repo: https://github.com/arindambasu01/Spoon-Knife.git
+
+#Pull Request - UI only
+
+
+# Stashing
+git stash
+git stash list
+git show stash list
+git stash pop
+git stash apply
+
+
+# Rebase commands
+#interactive rebase:
+
+git rebase --i <commit>
+git rebase --d
+git rebase --p
+git rebase --x
+
+# Get latest from remote to local
+git pull origin master
